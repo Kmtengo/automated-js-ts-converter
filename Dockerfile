@@ -10,4 +10,6 @@ RUN npm i convert-js-to-ts -g
 
 COPY entrypoint.sh /entrypoint.sh
 
+RUN chmod -R 775 /entrypoint.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
