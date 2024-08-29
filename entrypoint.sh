@@ -13,7 +13,7 @@ git config --global --add safe.directory /github/workspace
 git checkout "${GITHUB_HEAD_REF}"
 
 # Run JavaScript to TypeScript conversion
-npx convert-js-to-ts -p "src/**/*.jsx" --outputDir=src/output
+npx convert-js-to-ts --projectDir=src/*.js --outputDir=src/output
 
 # Check if any TypeScript files were generated
 if [ "$(ls -A src/output/*.ts 2>/dev/null)" ]; then
