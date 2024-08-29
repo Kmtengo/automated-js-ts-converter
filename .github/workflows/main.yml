@@ -1,0 +1,14 @@
+name: Convert JS to TS
+on:
+  pull_request:
+    branches: [main]
+    types: [labeled]
+jobs:
+  check-convert-test-review:
+    if: contains(github.event.pull_request.labels.*.name, 'convert-to-ts')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - name: Run Converter
+        uses: Kmtengo/automated-js-ts-converter@main
