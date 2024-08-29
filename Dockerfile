@@ -2,6 +2,7 @@ FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y \
     nodejs \
+    gh \
     git
 
 RUN npm i convert-js-to-ts -g
