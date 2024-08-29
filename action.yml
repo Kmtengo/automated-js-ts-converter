@@ -1,6 +1,6 @@
 name: "JS to TS Converter"
 author: "Kmtengo"
-description: "Converts JavaScript files to TypeScript using the convert-js-to-ts package."
+description: "Converts JavaScript files in a Pull Request to TypeScript, using the convert-js-to-ts package."
 runs:
   using: "docker"
   image: "Dockerfile"
