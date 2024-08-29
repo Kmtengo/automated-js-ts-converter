@@ -25,7 +25,7 @@ else
 fi
 
 git add -A && git commit -m "Convert JS files to TS"
-git push -U origin main
+git push --set-upstream origin ${{ github.head_ref }}
 
 # Comment on PR
 # This assumes that you have the `gh` tool installed and authenticated
