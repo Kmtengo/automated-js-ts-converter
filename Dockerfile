@@ -1,6 +1,7 @@
-FROM node:20
+FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y \
+    nodejs \
     git \
     gh
 
@@ -8,7 +9,7 @@ RUN npm install -g npm@10
 
 RUN npm cache clean --force
 
-RUN npm i ts-migrate
+RUN npm install --save-dev ts-migrate
 
 COPY entrypoint.sh /entrypoint.sh
 

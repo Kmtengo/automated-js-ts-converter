@@ -10,7 +10,7 @@ git config --global user.email "${GITHUB_ACTOR}"@localhost
 git config --global --add safe.directory /github/workspace
 
 # switching to the source branch of the pull request that triggered the GitHub Actions workflow.
-git checkout "${GITHUB_HEAD_REF}"
+git checkout ${GITHUB_HEAD_REF}
 
 # Run JavaScript to TypeScript conversion
 yes | npx ts-migrate-full src --sources="./src/**/*"
