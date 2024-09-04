@@ -7,7 +7,8 @@ RUN apt-get update && apt-get install -y \
     git
 
 RUN npm cache clean --force
-RUN npm install ts-migrate
+
+RUN npm i ts-migrate
 
 COPY entrypoint.sh /entrypoint.sh
 
