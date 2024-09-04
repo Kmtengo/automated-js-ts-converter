@@ -1,15 +1,18 @@
 FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y \
-    nodejs \
+    curl \
     git \
     gh
 
+# Install Node.js 20 and npm 10
+RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
+RUN apt-get install -y nodejs
 RUN npm install -g npm@10
 
 RUN npm cache clean --force
 
-RUN npm i ts-migrate
+RUN npm install --save-dev ts-migrate
 
 COPY entrypoint.sh /entrypoint.sh
 
