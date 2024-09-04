@@ -1,6 +1,7 @@
-FROM node:20
+FROM windows:latest
 
 RUN apt-get update && apt-get install -y \
+    nodejs \
     git \
     gh
 
