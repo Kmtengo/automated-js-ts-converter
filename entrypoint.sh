@@ -13,10 +13,10 @@ git config --global --add safe.directory /github/workspace
 git checkout ${GITHUB_HEAD_REF}
 
 # Run JavaScript to TypeScript conversion
-npx convert-js-to-ts --projectDir=src/*.js --outputDir=src/output
+yes | npx ts-migrate-full src --sources="./src/**/*"
 
 # Check if any TypeScript files were generated
-if [ "$(ls -A src/output/*.ts 2>/dev/null)" ]; then
+if [ "$(ls -A src/**/*.ts 2>/dev/null)" ]; then
   # Run tests
   npm test
 else
@@ -24,7 +24,7 @@ else
   exit 1
 fi
 
-git add -A && git commit -m "Convert JS files to TS"
+git add -A && git commit -m "Converted JS files to TS"
 git push --set-upstream origin ${{ github.head_ref }}
 
 # Comment on PR
