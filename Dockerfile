@@ -1,9 +1,10 @@
 FROM node:20
 
 RUN apt-get update && apt-get install -y \
-    npm \
-    gh \
-    git
+    git \
+    gh
+
+RUN npm install -g npm@10
 
 RUN npm cache clean --force
 
