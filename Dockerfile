@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
     gh \
     git
 
-RUN npm i convert-js-to-ts -g
+RUN npm install --save-dev ts-migrate
 
 COPY entrypoint.sh /entrypoint.sh
 
