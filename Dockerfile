@@ -18,6 +18,8 @@ RUN npm cache clean --force
 
 RUN npm install -g ts-migrate
 
+RUN pwd && ls
+
 COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod -R 775 /entrypoint.sh
