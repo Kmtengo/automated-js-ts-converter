@@ -20,7 +20,7 @@ RUN npm install -g ts-migrate
 
 RUN pwd
 
-RUN ls
+RUN ls /usr/app
 
 COPY entrypoint.sh /entrypoint.sh
 
