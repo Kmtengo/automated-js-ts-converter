@@ -16,7 +16,7 @@ RUN npm install -g npm@9
 
 RUN npm cache clean --force
 
-RUN npm install --save-dev ts-migrate
+RUN npm install -g ts-migrate
 
 COPY entrypoint.sh /entrypoint.sh
 
