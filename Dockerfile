@@ -1,5 +1,7 @@
 FROM ubuntu:latest
 
+WORKDIR /usr/app
+
 RUN apt-get update && apt-get install -y \
     curl \
     git \
@@ -9,8 +11,8 @@ RUN apt-get update && apt-get install -y \
 RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
 RUN apt-get install -y nodejs
 
-# Install npm 0.1.35
-RUN npm install -g npm@0.1.35
+# Install npm 9
+RUN npm install -g npm@9
 
 RUN npm cache clean --force
 
