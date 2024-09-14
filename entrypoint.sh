@@ -13,6 +13,11 @@ git config --global --add safe.directory /github/workspace
 
 echo "====================="
 
+#list branches in the repository
+git branch
+
+echo "====================="
+
 # switching to the source branch of the pull request that triggered the GitHub Actions workflow.
 git switch ${GITHUB_HEAD_REF}
 
