@@ -13,7 +13,12 @@ git config --global --add safe.directory /github/workspace
 
 echo "====================="
 
-#list branches in the repository
+# fetch all remote branches
+git fetch origin
+
+echo "====================="
+
+# list branches in the repository
 git branch
 
 echo "====================="
