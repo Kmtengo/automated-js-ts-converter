@@ -6,11 +6,17 @@ echo "====================="
 git config --global user.name "${GITHUB_ACTOR}"
 git config --global user.email "${GITHUB_ACTOR}"@localhost
 
+echo "====================="
+
 # Git command for ensuring we can run workflows
 git config --global --add safe.directory /github/workspace
 
+echo "====================="
+
 # switching to the source branch of the pull request that triggered the GitHub Actions workflow.
-git checkout ${GITHUB_HEAD_REF}
+git switch ${GITHUB_HEAD_REF}
+
+echo "====================="
 
 # Run JavaScript to TypeScript conversion
 yes | npx ts-migrate-full src --sources="./src/**/*"
