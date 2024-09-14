@@ -6,9 +6,9 @@ RUN apt-get update && apt-get install -y \
     gh
 
 # Install Node.js 20 and npm 10
-RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 RUN apt-get install -y nodejs
-RUN npm install -g npm@10
+RUN npm install -g npm@0.1.35
 
 RUN npm cache clean --force
 
