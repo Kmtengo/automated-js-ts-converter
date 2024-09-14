@@ -20,10 +20,6 @@ RUN npm install -g ts-migrate
 
 RUN pwd
 
-RUN ls /usr/app
+RUN chmod -R 775 entrypoint.sh
 
-COPY entrypoint.sh /entrypoint.sh
-
-RUN chmod -R 775 /entrypoint.sh
-
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/usr/app/entrypoint.sh"]
