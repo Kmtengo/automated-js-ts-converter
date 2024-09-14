@@ -20,6 +20,6 @@ RUN npm install -g ts-migrate
 
 RUN pwd
 
-RUN chmod -R 775 /usr/app/automated-js-ts-converter/entrypoint.sh
+RUN chmod -R 775 /automated-js-ts-converter/entrypoint.sh
 
-ENTRYPOINT ["/usr/app/entrypoint.sh"]
+ENTRYPOINT ["/automated-js-ts-converter/entrypoint.sh"]
