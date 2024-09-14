@@ -10,5 +10,7 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Run Converter
         uses: Kmtengo/automated-js-ts-converter@main
