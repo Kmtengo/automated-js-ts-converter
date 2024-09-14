@@ -18,8 +18,9 @@ RUN npm cache clean --force
 
 RUN npm install -g ts-migrate
 
+COPY entrypoint.sh /entrypoint.sh
 RUN pwd
 
-RUN chmod -R 775 /automated-js-ts-converter/entrypoint.sh
+RUN chmod -R 775 /entrypoint.sh
 
-ENTRYPOINT ["/automated-js-ts-converter/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
